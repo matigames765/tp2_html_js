@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boton{
+            background-color: blueviolet;
+        }
+    </style>
+    <script>
+        function mostrarDatos(){
+            vapellido = document.getElementById("apellido").value;
+            vnombre = document.getElementById("nombre").value;
+            vdni = document.getElementById("dni").value;
+            vfechanac = document.getElementById("fecha nacimiento").value;
+            vdomicilio = document.getElementById("domicilio").value;
+            vlocalidad = document.getElementById("localidad").value;
+            vrango1 = document.getElementById("rango1").value;
+            vrango2 = document.getElementById("rango2").value;
+            vrango3 = document.getElementById("rango3").value;
+            const radios = document.getElementsByName("lenguajes");
+            for (var i = 0;i < radios.lenght;i++){
+                if (radios[i].checked){
+                    var vidioma = radios[i].value;
+                    break;
+                }
+            }
+            document.write("Los datos ingresados fueron: </br>");
+            document.write("Apellido: "+vapellido+"</br>")
+            document.write("Nombre: "+vnombre+"</br>")
+            document.write("Dni: "+vdni+"</br>")
+            document.write("Fecha de nacimiento: "+vfechanac+"</br>")
+            document.write("Domicilio: "+vdomicilio+"</br>")
+            document.write("Localidad: "+vlocalidad+"</br>")
+            document.write("Idioma que conoce: "+vidioma+"</br>")
+            document.write("Nivel de conocimiento en rango 1: "+vrango1+"</br>")
+            document.write("Nivel de conocimiento en rango 2: "+vrango2+"</br>")
+            document.write("Nivel de conocimiento en rango 3: "+vrango3+"</br>")
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <form action = "" method = "post">
+        <label for = "apellido">Apellido</label>
+        <input type = "text" name = "last-name" id = "apellido" value = "">
+        <label for = "nombre">Nombre</label>
+        <input type = "text"  id = "nombre">
+        <br>
+        <p></p>
+        <label for = "dni">Dni</label>
+        <input type = "text" name = "dn" id = "dni" value = "">
+        <label for = "fecha nacimiento">Fecha Nacimiento</label>
+        <input type = "date" name = "fecha" id = "fecha nacimiento" value = "">
+        <br>
+        <p></p>
+        <label for = "domicilio">Domicilio</label>
+        <input type = "text" name = "dom" id = "domicilio" value = "">
+        <label for = "localidad">Localidad</label>
+        <input type = "text" name = "loc" id = "localidad" value = "">
+        <br>
+        <p></p>
+        <label><strong>Idiomas que conoce</strong></label>
+        <br>
+        <p></p>
+        <input type = "checkbox" name = "lenguajes" id = "españo" value = "español">
+        <label for = "españo">Español</label>
+        <br>
+        <input type = "checkbox" name = "lenguajes" id = "ingle" value = "ingles">
+        <label for = "ingle">Ingles</label>
+        <br>
+        <input type = "checkbox" name = "lenguajes" id = "france" value = "frances">
+        <label for = "france">Frances</label>
+        <br>
+        <input type = "checkbox" name = "lenguajes" id = "chin" value = "chino">
+        <label for = "chin">Chino</label>
+        <br>
+        <p></p>
+        <label>Nivel de conocimiento</label>
+        <br>
+        <p></p>
+        <label for ="rango1">0---50---100</label>
+        <input class = "rango" type = "range" min = "0" max = "100" step = "50" id = "rango1">
+        <br>
+        <label for ="rango2">0---50---100</label>
+        <input class = "rango" type = "range" min = "0" max = "100" step = "50" id = "rango2">
+        <br>
+        <label for ="rango3">0---50---100</label>
+        <input class = "rango "type = "range" min = "0" max = "100" step = "50" id = "rango3">
+        <br>
+        <p></p>
+        <button class = "boton"type = "submit" onclick = "mostrarDatos()">Enviar y mostrar</button>
+        <button class = "boton" type = "reset">Borrar</button>
+    </form>
+</body>
+</html>
